@@ -49,24 +49,49 @@ def analysis(imgpath):
     hsv_weight = [10, 1, 1]
     if(tone_analysis.is_warm(Lab_b, Lab_weight)):
         if(tone_analysis.is_spr(hsv_s, hsv_weight)):
-            tone = '봄웜톤(spring)'
+            #봄웜톤 일때
+            if(tone_analysis.is_spr_light(hsv_s, hsv_weight)):
+                tone = '봄웜라이트(spring)'
+            else:
+                tone = '봄웜브라이트(spring)'
         else:
-            tone = '가을웜톤(fall)'
+            #가을 웜톤일 때
+            if(tone_analysis.is_fall_mute(hsv_s, hsv_weight)):
+                tone = '가을웜뮤트(fall)'
+            else:
+                tone = '가을웜다크(fall)'
     else:
         if(tone_analysis.is_smr(hsv_s, hsv_weight)):
-            tone = '여름쿨톤(summer)'
+            if(tone_analysis.is_summer_light(hsv_s, hsv_weight)):
+                tone = '여름쿨라이트(summer)'
+            else:
+                tone = '여름쿨뮤트(summer)'
         else:
-            tone = '겨울쿨톤(winter)'
+            if(tone_analysis.is_winter_blight(hsv_s, hsv_weight)):
+            #겨울의 경우
+                tone = '겨울쿨브라이트(winter)'
+            else:
+                tone = '겨울쿨다크(winter)'
+
+                  
     # Print Result
     #print('{}의 퍼스널 컬러는 {}입니다.'.format(imgpath, tone))
-    if '겨울' in tone:
-        print("4")
-    if '봄' in tone:
+    if '봄웜라이트' in tone:
+        print("0")
+    if '봄웜브라이트' in tone:
         print("1")
-    if '여름' in tone:
+    if '여름쿨라이트' in tone:
         print("2")
-    if '가을' in tone:
+    if '여름쿨뮤트' in tone:
         print("3")
+    if '가을웜뮤트' in tone:
+        print("4")
+    if '가을웜다크' in tone:
+        print("5")
+    if '겨울브라이트' in tone:
+        print("6")
+    if '겨울다크' in tone:
+        print("7")
             
     #print(tone)
     f=open("/home/eugene131/personal/out.txt","a")

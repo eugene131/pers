@@ -89,3 +89,130 @@ def is_smr(hsv_s, a):
         return 1 #summer
     else:
         return 0 #winter
+
+
+
+
+
+
+
+def is_warm_light(lab_b, a):#웜 라이트 브라이트 구분
+    '''
+    파라미터 lab_b = [skin_b, hair_b, eye_b]
+    a = 가중치 [skin, hair, eye]
+    질의색상 lab_b값에서 warm의 lab_b, cool의 lab_b값 간의 거리를
+    각각 계산하여 warm이 가까우면 1, 반대 경우 0 리턴
+    '''
+    # standard of skin, eyebrow, eye
+    ##warm_b_std = [11.6518, 11.71445, 3.6484]
+    warm_light_std = [24.0518, 27.11445, 17.1484]
+    ##cool_b_std = [4.64255, 4.86635, 0.18735]
+    warm_blight_std = [9.64255, 7.86635, 12.18735]
+
+    warm_light_dist = 0
+    warm_blight_dist = 0
+
+    body_part = ['skin', 'eyebrow', 'eye']
+    for i in range(3):
+        warm_light_dist += abs(lab_b[i] - warm_light_std[i]) * a[i]
+        #print(body_part[i],"의 warm 기준값과의 거리")
+        #print(abs(lab_b[i] - warm_b_std[i]))
+        warm_blight_dist += abs(lab_b[i] - warm_blight_std[i]) * a[i]
+        #print(body_part[i],"의 cool 기준값과의 거리")
+        #print(abs(lab_b[i] - cool_b_std[i]))
+    if(warm_light_dist <= warm_blight_dist):
+        return 1 #warm
+    else:
+        return 0 #cool
+
+
+
+def is_summer_light(lab_b, a):#웜 라이트 브라이트 구분
+    '''
+    파라미터 lab_b = [skin_b, hair_b, eye_b]
+    a = 가중치 [skin, hair, eye]
+    질의색상 lab_b값에서 warm의 lab_b, cool의 lab_b값 간의 거리를
+    각각 계산하여 warm이 가까우면 1, 반대 경우 0 리턴
+    '''
+    # standard of skin, eyebrow, eye
+    ##warm_b_std = [11.6518, 11.71445, 3.6484]
+    summer_light_std = [24.0518, 27.11445, 17.1484]
+    ##cool_b_std = [4.64255, 4.86635, 0.18735]
+    summer_mute_std = [9.64255, 7.86635, 12.18735]
+
+    summer_light_dist = 0
+    summer_mute_dist = 0
+
+    body_part = ['skin', 'eyebrow', 'eye']
+    for i in range(3):
+        summer_light_dist += abs(lab_b[i] - summer_light_std[i]) * a[i]
+        #print(body_part[i],"의 warm 기준값과의 거리")
+        #print(abs(lab_b[i] - warm_b_std[i]))
+        summer_mute_dist += abs(lab_b[i] - summer_mute_std[i]) * a[i]
+        #print(body_part[i],"의 cool 기준값과의 거리")
+        #print(abs(lab_b[i] - cool_b_std[i]))
+    if(summer_light_dist <= summer_mute_dist):
+        return 1 #warm
+    else:
+        return 0 #cool
+
+
+
+def is_fall_mute(lab_b, a):#웜 라이트 브라이트 구분
+    '''
+    파라미터 lab_b = [skin_b, hair_b, eye_b]
+    a = 가중치 [skin, hair, eye]
+    질의색상 lab_b값에서 warm의 lab_b, cool의 lab_b값 간의 거리를
+    각각 계산하여 warm이 가까우면 1, 반대 경우 0 리턴
+    '''
+    # standard of skin, eyebrow, eye
+    ##warm_b_std = [11.6518, 11.71445, 3.6484]
+    fall_mute_std = [24.0518, 27.11445, 17.1484]
+    ##cool_b_std = [4.64255, 4.86635, 0.18735]
+    fall_dark_std = [9.64255, 7.86635, 12.18735]
+
+    fall_mute_dist = 0
+    fall_dark_dist = 0
+
+    body_part = ['skin', 'eyebrow', 'eye']
+    for i in range(3):
+        fall_mute_dist += abs(lab_b[i] - fall_mute_std[i]) * a[i]
+        #print(body_part[i],"의 warm 기준값과의 거리")
+        #print(abs(lab_b[i] - warm_b_std[i]))
+        fall_dark_dist += abs(lab_b[i] - fall_dark_std[i]) * a[i]
+        #print(body_part[i],"의 cool 기준값과의 거리")
+        #print(abs(lab_b[i] - cool_b_std[i]))
+    if(fall_mute_dist <= fall_dark_dist):
+        return 1 #warm
+    else:
+        return 0 #cool
+
+
+def is_winter_blight(lab_b, a):#웜 라이트 브라이트 구분
+    '''
+    파라미터 lab_b = [skin_b, hair_b, eye_b]
+    a = 가중치 [skin, hair, eye]
+    질의색상 lab_b값에서 warm의 lab_b, cool의 lab_b값 간의 거리를
+    각각 계산하여 warm이 가까우면 1, 반대 경우 0 리턴
+    '''
+    # standard of skin, eyebrow, eye
+    ##warm_b_std = [11.6518, 11.71445, 3.6484]
+    winter_blight_std = [24.0518, 27.11445, 17.1484]
+    ##cool_b_std = [4.64255, 4.86635, 0.18735]
+    winter_dark_std = [9.64255, 7.86635, 12.18735]
+
+    winter_blight_dist = 0
+    winter_dark_dist = 0
+
+    body_part = ['skin', 'eyebrow', 'eye']
+    for i in range(3):
+        winter_blight_dist += abs(lab_b[i] - winter_blight_std[i]) * a[i]
+        #print(body_part[i],"의 warm 기준값과의 거리")
+        #print(abs(lab_b[i] - warm_b_std[i]))
+        winter_dark_dist += abs(lab_b[i] - winter_dark_std[i]) * a[i]
+        #print(body_part[i],"의 cool 기준값과의 거리")
+        #print(abs(lab_b[i] - cool_b_std[i]))
+    if(winter_blight_dist <= winter_dark_dist):
+        return 1 #warm
+    else:
+        return 0 #cool
