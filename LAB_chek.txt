@@ -187,3 +187,8 @@
 /home/eugene131/personal/test_face/test_face4.jpg\18.79	12.4	11.22
 /home/eugene131/personal/test_face/test_face28.jpg\27.33	15.52	14.44
 /home/eugene131/personal/test_face/test_face26.png\19.17	13.16	8.23
+/home/eugene131/personal/src/tes1.png\13.29	14.05	11.79
+/home/eugene131/personal/src/test_face1.jpg\0.35	2.67	-0.06
+/home/eugene131/personal/src/tes1.png\13.29	13.79	11.87
+/home/eugene131/personal/src/test_face1_1_11zon.jpeg\0.16	2.26	0.39
+/home/eugene131/personal/src/tes1.png\13.55	13.97	12.15

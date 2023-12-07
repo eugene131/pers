@@ -1,7 +1,5 @@
-
 test_face1.jpg	7
 test_face2.jpg	2
-test_face3.jpg	2
 test_face4.jpg	7
 test_face5.png	4
 test_face6.png	5
@@ -28,4 +26,8 @@ test_face26.png	1
 test_face27.jpg	4
 test_face28.jpg	1
 test_face29.jpg	3
-test_face30.jpg	6
+test_face30.jpg	6tes1.png	6
+test_face1.jpg	7
+tes1.png	6
+test_face1_1_11zon.jpeg	7
+tes1.png	6
